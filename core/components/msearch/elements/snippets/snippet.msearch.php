@@ -82,7 +82,8 @@ else {
 	foreach ($res as $v) {
 		if ($tmp = $modx->getObject($class, $v['rid'])) {
 			$arr = $tmp->toArray();
-			$arr['num'] = $i++;
+			$i++;
+			$arr['num'] = $i;
 			$arr['intro'] = $mSearch->Highlight($v['resource'], $query);
 			if (!empty($includeTVs) && !empty($includeTVList)) {
 				$includeTVList = explode(',',$includeTVList);
